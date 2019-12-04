@@ -132,7 +132,7 @@ const parseGpsTime = (bytefrom39to40, seconds) => {
   const day = `00${core.convertBase(data.substr(0, 5), 2, 10)}`.substr(-2);
   const hours = `00${core.convertBase(data.substr(5, 5), 2, 10)}`.substr(-2);
   const minutes = `00${core.convertBase(data.substr(10, 6), 2, 10)}`.substr(-2);
-  const datetime = new Date(`${now}-${day}T${hours}:${minutes}:${seconds}`);
+  const datetime = new Date(`${now}-${day}T${hours}:${minutes}:${seconds}+00:00`);
   return isValid(datetime) ? datetime.toISOString() : null;
 };
 
